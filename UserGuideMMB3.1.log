@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.13)  25 NOV 2019 15:42
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.13)  27 NOV 2019 11:36
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -459,62 +459,60 @@ e found at []$\T1/pcr/m/n/9 http : / / www . dynare . org /
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <12> not available
 (Font)              Font shape `T1/ptm/b/n' tried instead on input line 8.
 
-Underfull \hbox (badness 10000) in paragraph at lines 9--11
+Underfull \hbox (badness 10000) in paragraph at lines 12--14
 
  []
 
 [1
 
 {/usr/local/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-<settings.png, id=44, 816.04875pt x 456.20438pt>
-File: settings.png Graphic file (type png)
-<use settings.png>
-Package pdftex.def Info: settings.png  used on input line 22.
-(pdftex.def)             Requested size: 341.43306pt x 190.87361pt.
-<settings2.png, id=46, 596.72937pt x 258.46562pt>
-File: settings2.png Graphic file (type png)
-<use settings2.png>
-Package pdftex.def Info: settings2.png  used on input line 23.
-(pdftex.def)             Requested size: 256.0748pt x 110.91324pt.
-)
+<settings31.png, id=44, 1146.2825pt x 568.1225pt>
+File: settings31.png Graphic file (type png)
+<use settings31.png>
+Package pdftex.def Info: settings31.png  used on input line 34.
+(pdftex.def)             Requested size: 341.43306pt x 169.22441pt.
+<settings2_31.png, id=46, 794.97pt x 708.6475pt>
+File: settings2_31.png Graphic file (type png)
+<use settings2_31.png>
+Package pdftex.def Info: settings2_31.png  used on input line 35.
+(pdftex.def)             Requested size: 256.0748pt x 228.27486pt.
+
+[2])
 :<-
 Package srcltx Info: Expanded filename `usingMMB' to `usingMMB.tex' on input li
 ne 77.
 :<+ usingMMB.tex
-(./usingMMB.tex [2 <./settings.png> <./settings2.png>]
-<frontend.png, id=55, 792.46063pt x 546.04pt>
+(./usingMMB.tex [3 <./settings31.png> <./settings2_31.png>]
+<frontend.png, id=59, 792.46063pt x 546.04pt>
 File: frontend.png Graphic file (type png)
 <use frontend.png>
 Package pdftex.def Info: frontend.png  used on input line 12.
 (pdftex.def)             Requested size: 426.79134pt x 294.08234pt.
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <10.95> not available
 (Font)              Font shape `T1/ptm/b/n' tried instead on input line 16.
- [3 <./frontend.png>]
-<gali.png, id=64, 777.40437pt x 243.91125pt>
+ [4 <./frontend.png>]
+<gali.png, id=68, 777.40437pt x 243.91125pt>
 File: gali.png Graphic file (type png)
 <use gali.png>
 Package pdftex.def Info: gali.png  used on input line 25.
 (pdftex.def)             Requested size: 426.79134pt x 133.90967pt.
-<documentmodels.png, id=66, 369.88188pt x 94.3525pt>
+<documentmodels.png, id=70, 369.88188pt x 94.3525pt>
 File: documentmodels.png Graphic file (type png)
 <use documentmodels.png>
 Package pdftex.def Info: documentmodels.png  used on input line 34.
 (pdftex.def)             Requested size: 426.79134pt x 108.8702pt.
-
-[4 <./gali.png> <./documentmodels.png>]
-<userrule.png, id=77, 599.74063pt x 408.02437pt>
+<userrule.png, id=72, 599.74063pt x 408.02437pt>
 File: userrule.png Graphic file (type png)
 <use userrule.png>
 Package pdftex.def Info: userrule.png  used on input line 47.
 (pdftex.def)             Requested size: 426.79134pt x 290.36551pt.
- [5 <./userrule.png>]
-<mmbsimul.png, id=85, 854.69313pt x 547.04375pt>
+ [5 <./gali.png> <./documentmodels.png>] [6 <./userrule.png>]
+<mmbsimul.png, id=90, 854.69313pt x 547.04375pt>
 File: mmbsimul.png Graphic file (type png)
 <use mmbsimul.png>
 Package pdftex.def Info: mmbsimul.png  used on input line 65.
 (pdftex.def)             Requested size: 426.79134pt x 273.16226pt.
- [6]
-<export.png, id=94, 805.0075pt x 414.04688pt>
+<export.png, id=92, 805.0075pt x 414.04688pt>
 File: export.png Graphic file (type png)
 <use export.png>
 Package pdftex.def Info: export.png  used on input line 74.
@@ -590,8 +588,8 @@ Package rerunfilecheck Info: File `UserGuideMMB3.1.out' has not changed.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 111.
  ) 
 Here is how much of TeX's memory you used:
- 7075 strings out of 492616
- 100715 string characters out of 6129481
+ 7076 strings out of 492616
+ 100753 string characters out of 6129481
  192440 words of memory out of 5000000
  10783 multiletter control sequences out of 15000+600000
  43138 words of font info for 66 fonts, out of 8000000 for 9000
@@ -603,7 +601,7 @@ xlive/2019/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/20
 19/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2019/texmf-d
 ist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/
 type1/urw/times/utmri8a.pfb>
-Output written on UserGuideMMB3.1.pdf (13 pages, 597596 bytes).
+Output written on UserGuideMMB3.1.pdf (13 pages, 566272 bytes).
 PDF statistics:
  185 PDF objects out of 1000 (max. 8388607)
  143 compressed objects within 2 object streams
