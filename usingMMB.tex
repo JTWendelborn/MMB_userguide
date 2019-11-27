@@ -83,7 +83,8 @@ One can choose impulse responses to a unit monetary policy shock (one percent po
 Lastly, for certain models, the unconditional variances are not defined and the autocorrelation functions do not exist. This is the case for some models which feature unit roots. The presence of unit roots prevents a calculation of unconditional moments of some or all variables. Nonetheless, for these models IRFs can still be generated. 
 
 \subsection*{Running a comparison exercise}
-Once you have selected a number of models, rules and output options, you can simply run the comparison exercise by clicking on the button 'Compare'. If you have chosen to run your simulations using OCTAVE, the command window from OCTAVE will be embedded and you see the running output (see, Figure \ref{mmbsimul}). If you are using MATLAB, a second window opens, in which the simulations are displayed as in MATLAB's command window. This second window closes automatically when the simulations are done.
+Once you have selected a number of models, rules and output options, you can simply run the comparison exercise by clicking on the button `Compare'. When the simulations run the command window from MATLAB/OCTAVE will be embedded and you see the running output (see, Figure \ref{mmbsimul}). Once the simulations are finished you can close the window by clicking on `Close'.
+%If you have chosen to run your simulations using OCTAVE, the command window from OCTAVE will be embedded and you see the running output (see, Figure \ref{mmbsimul}). If you are using MATLAB, a second window opens, in which the simulations are displayed as in MATLAB's command window. This second window closes automatically when the simulations are done.
  
 \begin{figure}[H]
 	\centering
@@ -93,7 +94,21 @@ Once you have selected a number of models, rules and output options, you can sim
 	\label{mmbsimul}
 \end{figure}
 
-As a result, the selected Impulse response functions and  autocorrelation functions are plotted, and the variances are displayed in a table at the bottom of the frontend. The results of the comparison exercise can be exported and saved in two ways. Either, one exports all the data, by clicking on CSV or JSON above the figures to receive a batch export in the respective file format, or one can export the figures one by one, by clicking on the menu on the upper right corner of each figure. Both options are marked with red boxes in Figure \ref{export}
+As a result, the selected Impulse response functions and  autocorrelation functions are plotted, and the variances are displayed in a table at the bottom of the frontend. 
+There are different options available to display the results (see figure \ref{display}). First, the user can choose whether results should be displayed in charts of variables, models or policy rules. This can be selected by clicking on `Group Data' and then the respective option. The default is to group outputs by variable, i.e. the charts represent variables and the graphs in the charts represent model/policy rule-combinations. 
+Further, the user can select the `maximum number of columns per row', which might be useful to increase readability or clarity depending on the screen used. 
+Finally, the user can choose which graphs are displayed in the charts by clicking on the respective entries of the caption.
+
+\begin{figure}[H]
+	\centering
+	\caption{\textsc{Display Options}}
+	\vspace{0.2cm}
+	\includegraphics[width=15cm,keepaspectratio]{display31.png}\\
+	\label{display}
+\end{figure}
+
+
+The results of the comparison exercise can be exported and saved in two ways. Either, one exports all the data, by clicking on CSV or JSON above the figures to receive a batch export in the respective file format, or one can export the figures one by one, by clicking on the menu on the upper right corner of each figure. Both options are marked with red boxes in Figure \ref{export}.
 \begin{figure}[H]
 	\centering
 	\caption{\textsc{Export Options}}
