@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.13)  27 NOV 2019 14:57
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.13)  27 NOV 2019 16:42
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -494,46 +494,48 @@ File: gali.png Graphic file (type png)
 Package pdftex.def Info: gali.png  used on input line 35.
 (pdftex.def)             Requested size: 426.79134pt x 133.90967pt.
  [4 <./frontend_models31.png>]
-<documentmodels31.png, id=71, 1093.08376pt x 306.14375pt>
+<documentmodels31.png, id=72, 1093.08376pt x 306.14375pt>
 File: documentmodels31.png Graphic file (type png)
 <use documentmodels31.png>
 Package pdftex.def Info: documentmodels31.png  used on input line 44.
 (pdftex.def)             Requested size: 426.79134pt x 119.53104pt.
-<frontend_pr31.png, id=78, 1122.1925pt x 792.9625pt>
+<frontend_pr31.png, id=79, 1122.1925pt x 792.9625pt>
 File: frontend_pr31.png Graphic file (type png)
 <use frontend_pr31.png>
 Package pdftex.def Info: frontend_pr31.png  used on input line 59.
 (pdftex.def)             Requested size: 426.79134pt x 301.57086pt.
  [5 <./gali.png> <./documentmodels31.png>]
-<userrule.png, id=93, 599.74063pt x 408.02437pt>
+<userrule.png, id=94, 599.74063pt x 408.02437pt>
 File: userrule.png Graphic file (type png)
 <use userrule.png>
 Package pdftex.def Info: userrule.png  used on input line 71.
 (pdftex.def)             Requested size: 426.79134pt x 290.36551pt.
  [6 <./frontend_pr31.png>]
 [7 <./userrule.png>]
-<mmbsimul.png, id=109, 854.69313pt x 547.04375pt>
+<mmbsimul.png, id=110, 854.69313pt x 547.04375pt>
 File: mmbsimul.png Graphic file (type png)
 <use mmbsimul.png>
-Package pdftex.def Info: mmbsimul.png  used on input line 93.
+Package pdftex.def Info: mmbsimul.png  used on input line 99.
 (pdftex.def)             Requested size: 426.79134pt x 273.16226pt.
-<display31.png, id=111, 1112.155pt x 650.43pt>
+ [8 <./mmbsimul.png>]
+<display31.png, id=120, 1112.155pt x 650.43pt>
 File: display31.png Graphic file (type png)
 <use display31.png>
-Package pdftex.def Info: display31.png  used on input line 106.
+Package pdftex.def Info: display31.png  used on input line 112.
 (pdftex.def)             Requested size: 426.79134pt x 249.60745pt.
- [8 <./mmbsimul.png>]
-<export.png, id=121, 805.0075pt x 414.04688pt>
+<export.png, id=122, 805.0075pt x 414.04688pt>
 File: export.png Graphic file (type png)
 <use export.png>
-Package pdftex.def Info: export.png  used on input line 116.
+Package pdftex.def Info: export.png  used on input line 122.
 (pdftex.def)             Requested size: 426.79134pt x 219.51329pt.
 )
 :<-
+[9 <./display31.png>]
 Package srcltx Info: Expanded filename `MMBstructure' to `MMBstructure.tex' on 
 input line 83.
+
 :<+ MMBstructure.tex
-(./MMBstructure.tex [9 <./display31.png> <./export.png>]
+(./MMBstructure.tex
 LaTeX Font Info:    Try loading font information for OMS+ptm on input line 13.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/psnfss/omsptm.fd
@@ -543,12 +545,12 @@ LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10.95> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 13.
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <10.95> not available
 (Font)              Font shape `T1/ptm/b/n' tried instead on input line 13.
-)
+ [10 <./export.png>])
 :<-
 Package srcltx Info: Expanded filename `ModelfileStructure' to `ModelfileStruct
 ure.tex' on input line 88.
 :<+ ModelfileStructure.tex
-(./ModelfileStructure.tex [10]
+(./ModelfileStructure.tex
 Package epstopdf Info: Source file: <modStructureRW97a.eps>
 (epstopdf)                    date: 2018-05-14 20:10:12
 (epstopdf)                    size: 34040 bytes
@@ -559,7 +561,7 @@ Package epstopdf Info: Source file: <modStructureRW97a.eps>
 erted-to.pdf modStructureRW97a.eps>
 (epstopdf)             \includegraphics on input line 10.
 Package epstopdf Info: Output file is already uptodate.
-<modStructureRW97a-eps-converted-to.pdf, id=140, 669.50125pt x 852.18375pt>
+<modStructureRW97a-eps-converted-to.pdf, id=141, 669.50125pt x 852.18375pt>
 File: modStructureRW97a-eps-converted-to.pdf Graphic file (type pdf)
 <use modStructureRW97a-eps-converted-to.pdf>
 Package pdftex.def Info: modStructureRW97a-eps-converted-to.pdf  used on input 
@@ -576,14 +578,14 @@ Package epstopdf Info: Source file: <modStructureRW97b.eps>
 erted-to.pdf modStructureRW97b.eps>
 (epstopdf)             \includegraphics on input line 18.
 Package epstopdf Info: Output file is already uptodate.
-<modStructureRW97b-eps-converted-to.pdf, id=148, 657.45625pt x 852.18375pt>
+<modStructureRW97b-eps-converted-to.pdf, id=149, 657.45625pt x 852.18375pt>
 File: modStructureRW97b-eps-converted-to.pdf Graphic file (type pdf)
 <use modStructureRW97b-eps-converted-to.pdf>
 Package pdftex.def Info: modStructureRW97b-eps-converted-to.pdf  used on input 
 line 18.
 (pdftex.def)             Requested size: 426.79134pt x 553.2107pt.
- [12 <./modStructureRW97a-eps-converted-to.pdf>] [13 <./modStructureRW97b-eps-c
-onverted-to.pdf>] [14])
+ [12 <./modStructureRW97a-eps-converted-to.pdf>]
+[13 <./modStructureRW97b-eps-converted-to.pdf>] [14])
 :<-
 :<+ UserGuideMMB3.1.bbl
 (./UserGuideMMB3.1.bbl)
@@ -601,7 +603,7 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 111.
 Here is how much of TeX's memory you used:
  7107 strings out of 492616
  101391 string characters out of 6129481
- 192637 words of memory out of 5000000
+ 192638 words of memory out of 5000000
  10805 multiletter control sequences out of 15000+600000
  43138 words of font info for 66 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -612,10 +614,10 @@ xlive/2019/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/20
 19/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2019/texmf-d
 ist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/
 type1/urw/times/utmri8a.pfb>
-Output written on UserGuideMMB3.1.pdf (15 pages, 625901 bytes).
+Output written on UserGuideMMB3.1.pdf (15 pages, 626237 bytes).
 PDF statistics:
- 212 PDF objects out of 1000 (max. 8388607)
- 164 compressed objects within 2 object streams
+ 213 PDF objects out of 1000 (max. 8388607)
+ 165 compressed objects within 2 object streams
  48 named destinations out of 1000 (max. 500000)
  93 words of extra memory for PDF output out of 10000 (max. 10000000)
 

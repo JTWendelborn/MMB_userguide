@@ -36,7 +36,7 @@ Hovering with the mouse over the models in the list and over the common policy r
 	\label{search}
 \end{figure}
 
-In addition, the user can download a complete list of all models currently used in the MMB on macromodelbase.com/downloads. Lastly, short descriptions of the models and their features are available on the same page. The menu of the MMB contains a direkt link to the model descriptions below the model selection menu as shown in Figure \ref{docmod}.
+In addition, the user can download a complete list of all models currently used in the MMB on \url{macromodelbase.com/downloads}. Lastly, short descriptions of the models and their features are available on the same page. The menu of the MMB contains a direkt link to the model descriptions below the model selection menu as shown in Figure \ref{docmod}.
 \begin{figure}[H]
 	\centering
 	\caption{\textsc{Model Documentation}}
@@ -78,8 +78,14 @@ In general, when a model (or a pre-specified rule) is chosen that is not compati
 
 Having chosen the models and a policy rule, the user can make some non-exclusive choices regarding the exercise outcomes to be displayed.
 The user can decide whether to see the unconditional variances and plot autocorrelation functions of the common variables, both of which are computed using theoretical moments of the solution for each variable. Also the user can opt for plotting impulse response functions of the common variables and specify the horizon for the analysis that is set to twenty periods as a default. 
+
 As default the common MMB variables (quarterly output gap, quarterly output, the year-on-year rate of inflation and the policy interest rate in annual terms) are selected. If only one model is chosen, all other variables as defined in the mod-file are also available. As a new feature in the MMB 3.1, some more variables which are featured in many of the models, but not in all of them  (among others consumption, investment and capital) can be selected for comparison if available in all selected models. 
+
 One can choose impulse responses to a unit monetary policy shock (one percent point increase in the monetary policy shock), and/or to a unit fiscal policy shock (one percent increase in GDP share of government expenditures). Note that all models of the Modelbase have a monetary policy shock, but a significant number of them do not have a fiscal policy shock. If this is the case, the impulse responses to a fiscal policy shock will not be available. Again, if only one model is selected, all model-specific shocks as defined in the mod-file are available for selection. Alongside the new comparable variables, also a number of shocks  appearing in many models are now available for comparison (e.g. Technology shock, Preference shock).
+%AL
+
+When you select an adaptive learning model, you can also set the gain parameter and select the states by clicking on `Select states'. In the window that pops up you can select the states individually for all adaptive learning models you have selected for the comparison.
+
 Lastly, for certain models, the unconditional variances are not defined and the autocorrelation functions do not exist. This is the case for some models which feature unit roots. The presence of unit roots prevents a calculation of unconditional moments of some or all variables. Nonetheless, for these models IRFs can still be generated. 
 
 \subsection*{Running a comparison exercise}

@@ -19,5 +19,9 @@ Changes that need to be made:
 	- monetary policy rules: adjust number of how many models have a model-specific rule
 	
 - Chapter 3: Structure of the Modelbase
+	- Is the folder MMB_OPTIONS still relevant?
+	- Which KEY FILES should be included?
+	
+- ADD CHAPTER ON ADDING AND MODIFYING MODELS
 
 - Chapter 4: Structure of the model files	
