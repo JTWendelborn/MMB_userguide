@@ -27,6 +27,9 @@ Changes that need to be made:
 		* [gregor:] nope. Doesn't exist anymore.
 	- Which KEY FILES should be included?
 		* [gregor:] what do you mean?
+			-> [jonas:] in chapter 3 there is a section "Some Key Files", featuring CMB_MMB.m, MMB_settings.m and MSR_COEFFS.m
+			   			as the MMB_OPTIONS folder doesn't exist anymore, I suppose these files are also not relevant anymore
+			   			-> should we include other files (and which ones) that are essential for the MMB in this section?
 		
 - ADD CHAPTER ON ADDING AND MODIFYING MODELS
 
