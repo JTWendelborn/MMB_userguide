@@ -5,6 +5,9 @@ TO DO LIST MMB_USERGUIDE:
 - maybe check with Gregor what the new features are:
 	- new common variables 
 	- parameter setting in adaptive learning models
+	- [gregor:] browse & edit models from within GUI
+	- [gregor:] display model specific vars & shocks
+	- [gregor:] scan for octave/matlab & dynare, set path, check compatibility
 	
 Changes that need to be made:
 
@@ -14,14 +17,18 @@ Changes that need to be made:
 	
 - Chapter 2: The Modelbase: Models, Rules and Options:
 	- maybe check whether the list of models that cannot be run in Octave has changed
-	- check which of the mentioned options are actually reintroduced
+	- check which of the mentioned options are actually reintroduced 
+		* [gregor:] should be all of them. If not, please let me know
 	- adjust options for AL models
 	- monetary policy rules: adjust number of how many models have a model-specific rule
 	
 - Chapter 3: Structure of the Modelbase
 	- Is the folder MMB_OPTIONS still relevant?
+		* [gregor:] nope. Doesn't exist anymore.
 	- Which KEY FILES should be included?
-	
+		* [gregor:] what do you mean?
+		
 - ADD CHAPTER ON ADDING AND MODIFYING MODELS
 
 - Chapter 4: Structure of the model files	
+	* [gregor:] and in particular on the JSONs, but I think this was implied
