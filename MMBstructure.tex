@@ -3,8 +3,8 @@ This section describes the key folders, in which the models, options, and rules 
 \subsection*{Key Folders}
  
 Your installation of the MMB 3.1 contains a subdirectory 'resources/app/dist/electron/static/mmci-cli', which contains the .m-files and .mod-files for the models, rules and options being used in the comparison exercises. 
-The subfolder \textit{MODELS} contains a specific folder for every model included in the MMB. The specific folders contain a  DYNARE mod-file in which the particular model is specified together with related MATLAB files, some of which are created by DYNARE, as well as a json-file, which is needed to link information displayed in the user interface to the corresponding mod-file. The subfolder \textit{MMB\_OPTIONS} contains specific MATLAB files related to the usage of the Modelbase for policy analysis and comparison, as well as explanatory notes for models and policy rules. The folder 
-\textit{ALTOOLS} contains scripts for the use of models with adaptive learning. 
+The subfolder \textit{MODELS} contains a specific folder for every model included in the MMB. The specific folders contain a  DYNARE mod-file in which the particular model is specified together with related MATLAB files, some of which are created by DYNARE, as well as a json-file, which is needed to link information displayed in the user interface to the corresponding mod-file. 
+%The subfolder \textit{MMB\_OPTIONS} contains specific MATLAB files related to the usage of the Modelbase for policy analysis and comparison, as well as explanatory notes for models and policy rules. The folder \textit{ALTOOLS} contains scripts for the use of models with adaptive learning. 
 
 \subsection*{Some Key files}
 The files discussed in this subsections are stored in the folder MMB\_OPTIONS.
@@ -18,5 +18,22 @@ Among others this file contains the list of model names in the vector 'names', i
 This file contains the list of coefficients for all model specific rules.
 \end{itemize}
 
+
+%Instead of the version above, I suggest to use this text:
+
+\subsection*{Some key files}
+In earlier versions, the MMB had the subfolder \textit{MMB\_OPTIONS} containing specific MATLAB files related to the usage of the Modelbase for policy analysis and comparison, as well as explanatory notes for models and policy rules. The folder \textit{ALTOOLS} contained scripts for the use of models with adaptive learning. These folders have been removed. The information is mostly contained in the .json file in the models folder.   
+
+The files discussed here are stored in the folder MODELS and are a brief introduction. For further information read section \textit{Structure of the model files}.
+%Cross reference if time allows
+
+\begin{itemize}
+\item \textbf{modelname.mod}\\
+This file contains the model variables, shocks and parameters as well as the model equations including the flex economy, the sticky price and wage economy and shocks. If the model is not linear, then sometimes the file also contains an \textit{initval} block, which provides guess values for non-linear solvers and steady state computations.
+\item \textbf{modelname.json}\\
+This file contains information about the capabilities of the model. It defines, which of the policy rules, the four common variables and two common shocks are eligible for this model. It also states if unconditional variances can be calculated. Additionally, the file contains general information about the model (e.g. paper, author,...). The model specific policy rule is included if it is available and also contains the exact parameter values. It is also stated if the model includes adaptive learning and if so it shows which variables are forwards, states\_short and states\_long. For all models, the name and text of all shocks and variables can be seen and changed in this file.
+\item \textbf{optional: modelname\_steadystate.m}\\
+In case of non-zero steady states, this file is included in the model specific folder and contains the steady state equations or values. 
+\end{itemize}
 
 
