@@ -88,6 +88,21 @@ When you select an adaptive learning model, you can also set the gain parameter 
 
 Lastly, for certain models, the unconditional variances are not defined and the autocorrelation functions do not exist. This is the case for some models which feature unit roots. The presence of unit roots prevents a calculation of unconditional moments of some or all variables. Nonetheless, for these models IRFs can still be generated. 
 
+
+\subsection*{Menu}
+In the upper right corner of the MMB GUI you can find the button `Menu'. When clicking the button, a drop-down menu opens, where you can click four buttons.\\
+Firstly, `Edit Rules/Models' opens a sub-window with all models included in the MMB. Here you can manually find the model you want to edit. After clicking on a model name, you can see its two relevant files, namely the .json and .mod file. The .json file contains basic information about the model, like paper title, author and journal, but it also contains information about the model capabilities, i.e. if the model is capable of producing the common variables (output, inflation, interest rate, output gap) and common shock (monetary and fiscal policy shock). As an example, \textit{fiscal\_shock": false} means that the model does not contain a fiscal policy shock. You can also see if unconditional variances are possible for this model and if it is an adaptive learning model. Furthermore, under \textit{rules} you can see which policy rule is eligible for the model you want to edit, while under \textit{msr} you can see and change the coefficients for the model specific policy rule. In the section below, you can see the name and the text of each shock and below that of each variable contained in the model. In case you want to change the name of a shock or variable appearing in the main-window, please change its text to the desired text. Hint: The text is case sensitive, so if you want to change the name of a variable for many models, be consistent with the text. The other file appearing in for the selected model is the .mod file. This file consists of a preamble defining all variables, shocks and parameters. It is followed by the parameter initialization and the model equations, which define the sticky price and wage economy and the flex economy, as well as shocks. In the case of non-zero steady state values of variables, there usually also exists a separate \textit{modelname\_steadystate.m} file, which defines the steady state of the model. In the upper right corner of the sub-window you can save the changes of the current file. It is important to keep in mind that you need to save the file before switching to another file because then unsaved changes are gone. Also, saving the changes does not apply them. You need to reload the data. At any time you can close the sub-window by clicking the `Close' button in the lower right corner of the sub-window. 
+%There is no folder with policy rules, only models
+
+The second button in the drop-down menu is `Reload Data' and applies the saved changes made to the files, i.e. renaming a shock or variable.
+%Maybe problem here (when renaming)  
+
+The third button `Settings' is explained in section \ref{installation}.
+%Include reference
+
+The last button `Help' opens a help window. 
+
+
 \subsection*{Running a comparison exercise}
 Once you have selected a number of models, rules and output options, you can simply run the comparison exercise by clicking on the button `Compare'. When the simulations run the command window from MATLAB/OCTAVE will be embedded and you see the running output (see, Figure \ref{mmbsimul}). Once the simulations are finished you can close the window by clicking on `Close'.
 %If you have chosen to run your simulations using OCTAVE, the command window from OCTAVE will be embedded and you see the running output (see, Figure \ref{mmbsimul}). If you are using MATLAB, a second window opens, in which the simulations are displayed as in MATLAB's command window. This second window closes automatically when the simulations are done.

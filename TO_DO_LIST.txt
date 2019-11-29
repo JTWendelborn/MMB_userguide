@@ -8,6 +8,7 @@ TO DO LIST MMB_USERGUIDE:
 	- [gregor:] browse & edit models from within GUI
 	- [gregor:] display model specific vars & shocks
 	- [gregor:] scan for octave/matlab & dynare, set path, check compatibility
+			-> [Alex:] done
 	
 Changes that need to be made:
 
@@ -30,6 +31,8 @@ Changes that need to be made:
 			-> [jonas:] in chapter 3 there is a section "Some Key Files", featuring CMB_MMB.m, MMB_settings.m and MSR_COEFFS.m
 			   			as the MMB_OPTIONS folder doesn't exist anymore, I suppose these files are also not relevant anymore
 			   			-> should we include other files (and which ones) that are essential for the MMB in this section?
+			-> [Alex:] I talked to Balint. The .m fles you mention are from an earlier version of the MMB. In 3.1 we only need 
+						the .json and .mod file (and maybe the _steadystate.m file)
 		
 - ADD CHAPTER ON ADDING AND MODIFYING MODELS
 
