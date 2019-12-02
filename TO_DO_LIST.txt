@@ -44,6 +44,7 @@ Changes that need to be made:
 						the .json and .mod file (and maybe the _steadystate.m file)
 		
 - ADD CHAPTER ON ADDING AND MODIFYING MODELS
+	-> Done
 
 - Chapter 4: Structure of the model files	
 	* [gregor:] and in particular on the JSONs, but I think this was implied
@@ -51,3 +52,4 @@ Changes that need to be made:
 
 
 Check rule numbers (and msr coeffiecients) if time allows!
+	-> rule numbers done
