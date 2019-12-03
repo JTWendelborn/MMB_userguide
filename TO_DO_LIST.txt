@@ -22,17 +22,21 @@ Changes that need to be made:
 		-> Please check if there is stll a problem for EA_Q14 for Octave 4.4.0
 	
 - Chapter 2: The Modelbase: Models, Rules and Options:
+	-> AL info 
+	- adjust options for AL models
+	- monetary policy rules: adjust number of how many models have a model-specific rule
+
+
 	- maybe check whether the list of models that cannot be run in Octave has changed
 		-> see above
 	- check which of the mentioned options are actually reintroduced 
 		* [gregor:] should be all of them. If not, please let me know
 			-> [Alex:] I had problems with showing variances, then nothing was plotted at all. 
 				It is the same as issue #51 by Joans (I will check again before I open an issue!)
-	- adjust options for AL models
-	- monetary policy rules: adjust number of how many models have a model-specific rule
 	
 - Chapter 3: Structure of the Modelbase
-	-> [Alex:] I made a suggestion for this chapter.
+	-> done
+
 	- Is the folder MMB_OPTIONS still relevant?
 		* [gregor:] nope. Doesn't exist anymore.
 	- Which KEY FILES should be included?
@@ -47,8 +51,8 @@ Changes that need to be made:
 	-> Done
 
 - Chapter 4: Structure of the model files	
+	-> done
 	* [gregor:] and in particular on the JSONs, but I think this was implied
-		-> Yes, the .mod file is explained quite intensively, we will check this and include .json description in detail
 
 
 Check rule numbers (and msr coeffiecients) if time allows!

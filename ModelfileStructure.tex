@@ -113,14 +113,11 @@ Next, there is a block for the model specific policy rule. The New Keynesian mod
 	\label{img:jsonmsr}
 \end{figure}
 
-Afterwards, the dimension of the shock is specified using \textit{"variabledim"}. It is set to 1 if the shock is in percent, so the number 1 next to the graph means 1\%, and 2 if it is in percent/100. In this case the number 1 next to the graph would mean 0.01\%. However, MMB 3.1 takes this into account and standardizes it to \%.
+Afterwards, the dimension of the shock is specified using \textit{"variabledim"}. It is set to 1 if the shock is expressed in percent or 2 if it is expressed in percent/100. Be aware of this when adding a model to the MMB.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  
 %Like this or the other way round?%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-The next block is \textit{"al"}, in which adaptive learning properties are specified. If the model does not include this feature, then the entry is set to \textit{false}. Otherwise, it is set to \textit{true}. Figure \ref{img:jsonmsr} (right) shows the structure of the code in the case of adaptive learning. In this case \textit{"al\_info"} is added, which contains three features, namely \textit{forwards}, \textit{states\_short} and \textit{states\_long}. All of these features are a set of variables. 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%Features, states_short, states_long%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+The next block is \textit{"al"}, in which adaptive learning properties are specified. If the model does not include this feature, then the entry is set to \textit{false}. Otherwise, it is set to \textit{true}. Figure \ref{img:jsonmsr} (right) shows the structure of the code in the case of adaptive learning. In this case \textit{"al\_info"} is added, which contains three features, namely \textit{forwards}, \textit{states\_short} and \textit{states\_long}. All of these features are a set of variables. Forwards are variables appearing with a lead in the model (i.e. var(+1) in the mod file). State variables, which appear with a lag in the model. In case of Euler equation learning, the agents forecast only immediate future variables. States\_short entails the state variables used for this forecast and are in the limited information set of the agents. Following \cite{Slobodyan2012}, for every forward, the information set is a small subset of the state variables and also includes a constant as well as two lags of the forward. Then a regression of the forward is run on the information set. Alternatively, long-horizon learning considers agents forecasting economic variables until infinity. States\_long entails state variables used for this case. However, in this version of the MMB we focus on Euler equation learning only, so only forwards and states\_short are used.  
 
 Lastly, there are blocks for \textit{"shocks"} and \textit{"variables"}, in which all shocks and variables of the model are listed. As the two objects are lists, the user needs to use square brackets. Every entry in the list is in curved brackets and separated by a comma. An entry contains a name and a text. The name is the same as in the mod file, while the text appears in the GUI. Note that the text is case sensitive.
