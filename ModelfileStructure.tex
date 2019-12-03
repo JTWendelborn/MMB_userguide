@@ -4,19 +4,19 @@ As an example we take the simple New-Keynesian model by \cite{RotembergWoodford1
 explain the structure of the mod-files, its model specific parts and the common model data base blocks. The current example is based on the DYNARE 4.5.6 version of the Modelbase. The mod-file is shown in {\bf Figure \ref{img:modStructureRW97a}} and {\bf Figure \ref{img:modStructureRW97b}}. However, the explanations apply to all models.
 In the following, the two main parts of a mod-file, the preamble and the model block, are described step by step.
 
-\begin{figure}[H]
+\begin{figure}[p]
 \centering
 \caption{\textsc{Structure of the model files: The Preamble}}
 \vspace{0.2cm}
-\includegraphics[width=15cm,keepaspectratio]{modStructureRW97a.eps}\\
+\includegraphics[width=15cm,keepaspectratio]{mod1.png}\\
 \label{img:modStructureRW97a}
 \end{figure}
 
-\begin{figure}[H]
+\begin{figure}[p]
 \centering
 \caption{\textsc{Structure of the model files: The Model Block}}
 \vspace{0.2cm}
-\includegraphics[width=15cm,keepaspectratio]{modStructureRW97b.eps}\\
+\includegraphics[width=15cm,keepaspectratio]{mod2.png}\\
 \label{img:modStructureRW97b}
 \end{figure}
 
@@ -40,7 +40,7 @@ In the following, the two main parts of a mod-file, the preamble and the model b
     the common fiscal policy shock, \textit{fiscal\_} in line 13. Note that in some models with no treatment of government spending, the
     latter Modelbase shock may be left out.
     \item Following the keyword \textit{parameters} in line 16, the Modelbase parameters in the Modelbase block are initialized.
-    In {\bf Figure \ref{img:mod1}} line 20 we have, for brevity reasons, only included three policy parameters.
+    In {\bf Figure \ref{img:modStructureRW97a}} line 20 we have, for brevity reasons, only included three policy parameters.
     In the actual mod-files there are many more leads and lags. These are the parameters of the
     general monetary policy function, except for the last one, \textit{coffispol},
     which enters the common discretionary government spending equation.
@@ -61,7 +61,7 @@ In the following, the two main parts of a mod-file, the preamble and the model b
 \noindent {\it Part 2: The model block}
 
 \begin{itemize}
-\item The model block starts in line 52 of {\bf Figure \ref{img:mod2}} as indicated by the keyword \textit{model} followed
+\item The model block starts in line 52 of {\bf Figure \ref{img:modStructureRW97b}} as indicated by the keyword \textit{model} followed
 by \textit{linear}, which tells DYNARE that the equations are already linearized and thus reduces computing time.
 \item In the Modelbase block going from lines 54 to 63 the common variables are defined in terms of the original model variables.
 The variable \textit{interest} denotes the annualized short-term interest rate, \textit{inflation} is annual inflation,
@@ -70,7 +70,7 @@ The common variable \textit{fispol} represents discretionary fiscal policy. It i
 shock variable, which in the case of our example is \textit{g\_}. Note again, that this model-specific shock has to be initialized
 as an endogenous variable. This allows us the keep the original model equation for government spending unchanged.
 \item It follows the common \textit{Policy Rule} block. In lines 70 to 74 the common monetary policy rule is specified.
-Again for reasons of brevity we have not displayed the complete general policy rule in {\bf Figure \ref{img:mod2}}.
+Again for reasons of brevity we have not displayed the complete general policy rule in {\bf Figure \ref{img:modStructureRW97b}}.
 Below in line 78, the common equation for discretionary government spending is specified.
 \item The original model equations are then specified in lines 83 to 90. Note that the model-specific monetary policy rule is commented out because the common policy rule is introduced. On the contrary, the government spending equation in line 89 has remained unchanged.
 The model section ends in line 91 with the required keyword \textit{end}.
@@ -83,9 +83,7 @@ The json files have a common syntax. As take the same example as above to explai
 
 Every json file starts with a curved bracket. All objects need to be specified in " ". Firstly, it is specified what the json file includes, here it is a model, followed by the name of the model (\textit{NK\_RW97}). Here, the first letters determine which type of model it is (e.g. New Keynesian model: NK, Euro Area: EA, United States: US, or others), followed by a `\textit{\_}'. The next letters are set according to the last names of the authors (here: RW stands for Rotemberg and Woodford). The name is completed by the year of publication (97 stands for 1997, while 03 or 13 stands for 2003/2013). Optionally, AL is added to the model in case the model includes adaptive learning. 
 
-The first block you need to specify are the \textit{"capabilities"} (lines 4-22). It defines, which of the four common variables and two common shocks are eligible for this model. If they are included, the value is set to \textit{true}, else it is set to \textit{false}. After that \textit{"rules"} contains all policy rules, which are available for this model. Note that the set of available rules is written in square brackets. All unavailable policy rules appear in gray in the GUI and can not be chosen.
-%which means which?
-It also states if unconditional variances can be calculated (line 21). So for NK\_RW97, all common variables, shocks as well as unconditional variances are available. Rules 3-7 and 9-11 can be chosen. 
+The first block you need to specify are the \textit{"capabilities"} (lines 4-22). It defines, which of the four common variables and two common shocks are eligible for this model. If they are included, the value is set to \textit{true}, else it is set to \textit{false}. After that \textit{"rules"} contains all policy rules, which are available for this model. Note that the set of available rules is written in square brackets. All unavailable policy rules appear in gray in the GUI and can not be chosen. In step 3 of section \ref{sec:HowToAddModels} there is a list showing which rule number belongs to which monetary policy rule. In the json file it also states if unconditional variances can be calculated (line 21). So for NK\_RW97, all common variables, shocks as well as unconditional variances are available. Rules 3-7 and 9-11 can be chosen. 
 
 The next block, \textit{"description"} (lines 23-36), contains general information about the model, like reference, paper title, journal and year published, replicants name, keywords, description, category and authors. Again all sets are written in square brackets. This includes key words and authors. General information is shown when holding the mouse over a model. It is important to specify the category of the model because it specifies in which model block the model appears in the GUI. Type \textit{"Calibrated model"} for calibrated models, \textit{"Estimated euro area model"} for EA models, \textit{"Estimated US model"} for US models, \textit{"Estimated other-country model"} for other countries or \textit{"Adaptive learning model"} for adaptive learning models. Note that these entries are case sensitive.
 
@@ -98,9 +96,11 @@ The next block, \textit{"description"} (lines 23-36), contains general informati
 \end{figure}
 
 Next, there is a block for the model specific policy rule. The New Keynesian model by Rotemberg and Woodford does not have a model specific policy rule, so this entry is set to \textit{null}. It is the policy rule used in the paper. Consider NK\_CGG02AL as an example for msr and adaptive learning. Figure \ref{img:jsonmsr} (left) shows the syntax for the msr entry. As it is a set, you need to specify the policy rule coefficients inside of square brackets.
-%which belong to which?   
+%%%%%%%%%%%%%%%%%%%%%%%%
+%which belong to which?% 
+%%%%%%%%%%%%%%%%%%%%%%%% 
 
-\begin{figure}[H]
+\begin{figure}[p]
 	\centering
 	\caption{\textsc{Structure of the json files: msr (left) and AL (right)}}
 	\vspace{0.2cm}
@@ -113,10 +113,14 @@ Next, there is a block for the model specific policy rule. The New Keynesian mod
 	\label{img:jsonmsr}
 \end{figure}
 
-Afterwards, the dimension of the shock is specified using \textit{"variabledim"}. It is set to 1 if the shock is in percent, so the number 1 next to the graph means 1\%, and 2 if it is in percent/100. In this case the number 1 next to the graph would mean 0.01\%. However, MMB 3.1 takes this into account and standardizes it to \%.  
-%Like this or the other way round?
+Afterwards, the dimension of the shock is specified using \textit{"variabledim"}. It is set to 1 if the shock is in percent, so the number 1 next to the graph means 1\%, and 2 if it is in percent/100. In this case the number 1 next to the graph would mean 0.01\%. However, MMB 3.1 takes this into account and standardizes it to \%.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  
+%Like this or the other way round?%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 The next block is \textit{"al"}, in which adaptive learning properties are specified. If the model does not include this feature, then the entry is set to \textit{false}. Otherwise, it is set to \textit{true}. Figure \ref{img:jsonmsr} (right) shows the structure of the code in the case of adaptive learning. In this case \textit{"al\_info"} is added, which contains three features, namely \textit{forwards}, \textit{states\_short} and \textit{states\_long}. All of these features are a set of variables. 
-%Features, states_short, states_long
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Features, states_short, states_long%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 Lastly, there are blocks for \textit{"shocks"} and \textit{"variables"}, in which all shocks and variables of the model are listed. As the two objects are lists, the user needs to use square brackets. Every entry in the list is in curved brackets and separated by a comma. An entry contains a name and a text. The name is the same as in the mod file, while the text appears in the GUI. Note that the text is case sensitive.
