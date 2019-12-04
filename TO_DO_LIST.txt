@@ -25,6 +25,7 @@ Changes that need to be made:
 	-> AL info 
 	- adjust options for AL models
 	- monetary policy rules: adjust number of how many models have a model-specific rule
+		-> done
 
 
 	- maybe check whether the list of models that cannot be run in Octave has changed

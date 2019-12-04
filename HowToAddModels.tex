@@ -9,7 +9,7 @@ Adding a new model to the data base consists of four steps. First, the original 
 %\label{img:MenuStructure6}
 %\end{figure}
 
-\noindent {\it Step 1: Creating the mod-file}
+\noindent {\it Step 1: Create a Dynare mod-file}
 
 \begin{itemize}
 \item The first task when adding a new model to the Modelbase is to create a DYNARE mod-file. The file should start with a comment section giving some information about the associated reference paper(s) for the model.
@@ -39,20 +39,26 @@ government spending shock \textit{g\_} in line 59. The original model equations 
 %\label{img:MenuStructure6}
 %\end{figure}
 
-\noindent {\it Step 2: Storing the mod-file}
+\noindent {\it Step 2: Save the Dynare mod-file}
 
 \begin{itemize}
 \item Next, the file has to be stored as mod-file under the model name. In the example, the \textit{NK\_RW97} model is stored as \textit{NK\_RW97.mod}. The name of calibrated New Keynesian models should start with \textit{NK}, models of the US economy should start with \textit{US} and models of the Euro area should start with \textit{EA}. The full model name should allow for the identification of the specific model among the other Modelbase models. The file must be stored in a folder that has to be created under exactly the same model name and that is positioned in the subfolder \textit{MODEL}, i.e. the created mod-file would be on the path `resources/app/dist/electron/static/mmci-cli/models/NK\_RW97/NK\_RW97.mod'.
 \end{itemize}
 
-\noindent {\it Step 3: Creating the json-file.}
+\noindent {\it Step 3: Create a json-file.}
 
 \begin{itemize}
-\item The json creates the link between the mod-file and the MMB. The structure is as explained in section \ref{sec:ModelfileStructure} and shown in figure \ref{img:jsonstructure}. The contents of the json have to be in curly brackets (\{...\}) and blocks are separated by commas.
-\item First, specify that your json refers to a model by setting \texttt{"\$schema": "model"},
-\item Second, specify the name of your model \texttt{"name": \textit{name}}, which should be the same you have given to the folder, the mod-file and the json-file.
-\item Third, the \texttt{"capabilities"} block specifies which of the common variables and shocks are available in the model; you can enable them by setting them to \texttt{true} or disable by \texttt{false}.
-\item Next, enter the policy rules that can be chosen to be run with this model. You have to enter the rule ids in square brackets ($[$ ... $]$) and separate them by commas. The number coding is as follows:
+\item The json creates the link between the mod-file and the MMB. The structure is as explained in section \ref{sec:ModelfileStructure} and shown in figure \ref{img:jsonstructure}. 
+Please feel free to copy the format of any model's json-file provided in the MMB package to create your own json-file. While users should change some entries in the json-file based on their model features and preferences, please keep in mind that the style of punctuation marks should remain the same.
+In particular, the contents of the json have to be in curly brackets (\{...\}) and blocks are separated by commas.
+%\item First, specify that your json refers to a model by setting \texttt{"\$schema": "model"},
+\item For \texttt{"\$schema"}, keep \texttt{"model"} to indicate that the json-file refers to a model.
+%\item Second, specify the name of your model \texttt{"name": \textit{name}}, which should be the same you have given to the folder, the mod-file and the json-file.
+\item For \texttt{"name"}, type the name of your new model, which should be the same as your mod-file's name.
+%\item Third, the \texttt{"capabilities"} block specifies which of the common variables and shocks are available in the model; you can enable them by setting them to \texttt{true} or disable by \texttt{false}.
+\item For \texttt{"capabilities"}, type \texttt{true} to enable common variables and shocks available in your new model, or \texttt{false} to disable them.
+Type the corresponding numbers to the policy rules (see table below) chosen to run with your model. 
+%You have to enter the rule ids in square brackets ($[$ ... $]$) and separate them by commas. The number coding is as follows:
 	\begin{table}[H]
 	\centering
 	\begin{tabular}{rll}
@@ -69,14 +75,21 @@ government spending shock \textit{g\_} in line 59. The original model equations 
 		 11 & CMR & \cite{CMR2014}\\		 
 	\end{tabular}
 	\end{table}
-\item Fourth, you can specify whether the variances shown are unconditional. For the moment being this is true for all model in the MMB, so set \texttt{"unconditional\_variances": true}.
-\item Fifth, add the \texttt{"description"}. \texttt{"category"} defines in which category the model falls and hence where it will be displayed in the interface. The option are \texttt{Calibrated model}, \texttt{Estimated euro area model}, \texttt{Estimated US model}, \texttt{Estimated other-country model} and \texttt{Adaptive learning model}. Note that these entries are case sensitive.
-\item Sixth, specify whether a model-specific rule is available. If the model-specific rule cannot be expressed in terms of the common variables, set \texttt{"msr": null}. If a compatible model-specific rule is available, specify the parameters in square brackets. See section \ref{sec:HowToAddRules} for details.
-\item Seventh, specify the dimension of the shock by setting \texttt{"variabledim"} to \texttt{1}, if the shock is expressed in percent or to \texttt{2} if the shock is expressed in percent/100.
-\item Eighth, specify whether the model features adaptive learning. If not, set \texttt{"al": false} and \texttt{"al\_info": null}, if yes set \texttt{"al": true} and use the block \texttt{"al\_info": \{...\}} to specify the \texttt{forwards}, \texttt{states\_long} and \texttt{states\_short} (see figure \ref{img:jsonmsr} for an example).
-\item Ninth, specify the shocks available in your model by setting the \texttt{"shocks": $[$...$]$} block. Shocks need to be in curly brackets (\{...\}) and be separated by commas. For each shock you need a \texttt{"name": "\textit{name}"} which is the same as in the mod-file and a \texttt{"text": "\textit{displayed\_name}"} which will be shown in the MMB interface. This block should at least include the common Monetary Policy Shock.
-\item Tenth, use the \texttt{"variables"} block to specify all variables in your model, i.e. both, model-specific variable as well as common variables. This block follow the same syntax as the  \texttt{"shocks"} block.
-\item As mentioned before, save the json-file in the same folder as the mod-file.
+You can specify whether the variances shown are unconditional. For the moment being this is true for all models in the MMB, so set \texttt{"unconditional\_variances": true}.
+%\item Fifth, add the \texttt{"description"}. \texttt{"category"} defines in which category the model falls and hence where it will be displayed in the interface. The option are \texttt{Calibrated model}, \texttt{Estimated euro area model}, \texttt{Estimated US model}, \texttt{Estimated other-country model} and \texttt{Adaptive learning model}. Note that these entries are case sensitive.
+\item For \texttt{"description"}, change the entries based on the information of your new model. For \texttt{"category"}, type (case sensitive) \texttt{Calibrated model}, \texttt{Estimated euro area model}, \texttt{Estimated US model}, \texttt{Estimated other-country model}, or \texttt{Adaptive learning model} - your new model will be displayed in the corresponding list on the MMB interface.
+%\item Sixth, specify whether a model-specific rule is available. If the model-specific rule cannot be expressed in terms of the common variables, set \texttt{"msr": null}. If a compatible model-specific rule is available, specify the parameters in square brackets. See section \ref{sec:HowToAddRules} for details.
+\item For \texttt{"msr"}, specify the coefficients in square brackets if your modes has a specific monetary policy rule that can bee expressed in terms of the common variables (see details in section \ref{sec:HowToAddRules}), or type \texttt{null} otherwise.
+%\item Seventh, specify the dimension of the shock by setting \texttt{"variabledim"} to \texttt{1}, if the shock is expressed in percent or to \texttt{2} if the shock is expressed in percent/100.
+\item For \texttt{"variabledim"} type \texttt{1} if the shock is expressed in percent, or \texttt{2} if the shock is expressed in percent/100.
+%\item Eighth, specify whether the model features adaptive learning. If not, set \texttt{"al": false} and \texttt{"al\_info": null}, if yes set \texttt{"al": true} and use the block \texttt{"al\_info": \{...\}} to specify the \texttt{forwards}, \texttt{states\_long} and \texttt{states\_short} (see figure \ref{img:jsonmsr} for an example).
+\item For \texttt{"al"} type \texttt{true} if your new model features adaptive learning, or \texttt{false} otherwise.
+%\item Ninth, specify the shocks available in your model by setting the \texttt{"shocks": $[$...$]$} block. Shocks need to be in curly brackets (\{...\}) and be separated by commas. For each shock you need a \texttt{"name": "\textit{name}"} which is the same as in the mod-file and a \texttt{"text": "\textit{displayed\_name}"} which will be shown in the MMB interface. This block should at least include the common Monetary Policy Shock.
+\item For \texttt{"shocks"}, list all the shocks in your model. For each shock, type the shock's notation, same as that in your mod-file, after \texttt{"name"} and the shock's name after \texttt{"text"}, for instance \texttt{"name": "z", "text": "Technology shock"}.
+\item For \texttt{"al\_info"} specify the \texttt{forwards}, \texttt{states\_long} and \texttt{states\_short} if your model features adaptive learning - see figure \ref{img:jsonmsr}, or \texttt{null} otherwise.
+%\item Tenth, use the \texttt{"variables"} block to specify all variables in your model, i.e. both, model-specific variable as well as common variables. This block follow the same syntax as the  \texttt{"shocks"} block.
+\item For \texttt{"variables"}, type alle of the variables in your new model, including the MMB common variables. For each variable, type the variable's notation, same as that in your mod-file, after \texttt{"name"} and the variable's name after \texttt{"text"}.
+\item Save the json-file in the same folder where you saved the mod-file.
 
 \end{itemize}
 
@@ -84,8 +97,8 @@ government spending shock \textit{g\_} in line 59. The original model equations 
 \noindent {\it Step 4: Initializing the model in the Modelbase interface.} %\textit{MMB.m} file}
 
 \begin{itemize}
-\item As the final step, one initiates the model in the Modelbase interface.
-\item Open the MMB interface and click on `Menu' in the upper right corner as indicated in \ref{img:Settings}. Then click on `Reload Data'. The new model should now appear in the list of models under the specified category.
+%\item As the final step, one initiates the model in the Modelbase interface.
+\item After relaunching the interface, click on `Menu' in the upper right corner as shown in \ref{img:Settings} and click on `Reload Data'. The new model should now appear in the list that you specified in \texttt{"category"} of the json-file. 
 %\item In \textit{MMB.m}, the model name has to be added at the corresponding position to the vector \textit{names}. Currently, one can substitute the New\_Model with the name of the model one is adding.
 %  Next, a new entry has to be added at the corresponding position to the vector \textit{variabledim}. This entry has to be \textit{1} if the standard deviations of the model-specific shocks are expressed in percent and it has to be \textit{2} if the standard deviations are expressed in percent/100. Lastly, a new entry has to be added as well at \textit{mycolor}. Also, the model should be assigned to one of the five model categories in Modelbase.
 %\item The new models should be also initialized in \textit{OPT1MENU.m} and \textit{OPT2MENU.m} files under the MMB\_OPTIONS folder. Please consult Section \ref{sec:HowToUseGUI} for instructions how to do this.
