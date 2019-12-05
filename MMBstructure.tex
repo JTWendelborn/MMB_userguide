@@ -1,26 +1,20 @@
-This section describes the key folders, in which the models, options, and rules are stored and briefly sketches the structure of the key files, which are used in the execution of the modelbase.
+This chapter introduces key folders and files in the MMB package. The content of key files is described briefly in this chapter. For details read chapter \ref{sec:ModelfileStructure}. 
 
 \subsection*{Key Folders}
  
-Your installation of the MMB 3.1 contains a subdirectory 'resources/app/dist/electron/static/mmci-cli', which contains the .m-files and .mod-files for the models, rules and options being used in the comparison exercises. 
-The subfolder \textit{MODELS} contains a specific folder for every model included in the MMB. The specific folders contain a  DYNARE mod-file in which the particular model is specified together with related MATLAB files, some of which are created by DYNARE, as well as a json-file, which is needed to link information displayed in the user interface to the corresponding mod-file. 
-
-The subfolder \textit{RULES} contains json files for each monetary policy rule.
-
-The subfolder \textit{ALTOOLS} in the folder \textit{LIB} contains scripts for the use of models with adaptive learning. 
-
+Users can find three key folders under the directory \textit{’resources/app/dist/electron/static/mmci- cli’}. The folder \textit{MODELS} includes a list of folders for each model in the MMB, with one mod-file and one json-file that links the mod-file and the MMB interface inside. The folder \textit{RULES} includes json-files for all the common monetary policy rules in the MMB. The subfolder \textit{ALTOOLS} in the folder \textit{LIB} includes scripts for adaptive learning models.
 \subsection*{Some key files}
 In earlier versions, the MMB had the subfolder \textit{MMB\_OPTIONS} containing specific MATLAB files related to the usage of the Modelbase for policy analysis and comparison, as well as explanatory notes for models and policy rules. These folders have been removed. The information is mostly contained in the .json file in the models folder.   
 
-The files discussed here are stored in the folder MODELS and are a brief introduction. For further information read section \ref{sec:ModelfileStructure}.
+The files discussed here are stored in the folder \textit{MODELS} and are a brief introduction. For further information read chapter \ref{sec:ModelfileStructure}.
 
 \begin{itemize}
 \item \textbf{modelname.mod}\\
-This file contains the model variables, shocks and parameters as well as the model equations including the flex economy, the sticky price and wage economy and shocks. If the model is not linear, then sometimes the file also contains an \textit{initval} block, which provides guess values for non-linear solvers and steady state computations.
+This mod-file contains the model variables, shocks and parameters as well as the model equations for economies with flexible or sticky price and wage. If the model is nonlinear, the file should also include an \textit{initval} block, which provides guess values for non-linear solvers and steady state computations.
 \item \textbf{modelname.json}\\
-This file contains information about the capabilities of the model. It defines, which of the policy rules, the four common variables and two common shocks are eligible for this model. It also states if unconditional variances can be calculated. Additionally, the file contains general information about the model (e.g. paper, author,...). The model specific policy rule is included if it is available and also contains the exact parameter values. It is also stated if the model includes adaptive learning and if so it shows which variables are forwards, states\_short and states\_long. For all models, the name and text of all shocks and variables can be seen and changed in this file.
+The json-file illustrates a model’s capabilities, including which monetary policy rules and shocks are applicable to the model, whether or not unconditional variances could be calculated, and whether or not the model features adaptive learning. If the latter is true, then the json-file shows which variables are forwards and states (divided into states short and long, depending on the adaptive learning mechanism). Parameters of the model’s specific policy rule, if available, is also specified in the json-file. Users can also change a variable’s or shocks' notation in the json-file.
 \item \textbf{optional: modelname\_steadystate.m}\\
-In case of non-zero steady states, this file is included in the model specific folder and contains the steady state equations or values. 
+The m-file contains the steady state values and equations in case of non-zero steady states. 
 \end{itemize}
 
 
